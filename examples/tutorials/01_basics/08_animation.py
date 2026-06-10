@@ -20,8 +20,6 @@ Play an animation using a trigger, and then another animation by name.
 '''
 
 import cozmo
-
-
 def cozmo_program(robot: cozmo.robot.Robot):
     # Play an animation via a Trigger - see:
     # http://cozmosdk.anki.com/docs/generated/cozmo.anim.html#cozmo.anim.Triggers
@@ -43,6 +41,5 @@ def cozmo_program(robot: cozmo.robot.Robot):
     # the available animations.
     print("Playing Animation 3:")
     robot.play_anim(name="anim_poked_giggle").wait_for_completed()
-
 
 cozmo.run_program(cozmo_program)
