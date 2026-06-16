@@ -13,6 +13,7 @@ def my_program(robot: cozmo.robot.Robot):
         robot.say_text("Try picking me up").wait_for_completed()
 
         # This handler fires automatically whenever state updates
+        # Change his back LED depending on states
         def watch(evt, **kw):
             if robot.is_picked_up:
                 robot.set_all_backpack_lights(cozmo.lights.red_light)
@@ -22,9 +23,6 @@ def my_program(robot: cozmo.robot.Robot):
                 robot.set_all_backpack_lights(cozmo.lights.green_light)
 
         robot.add_event_handler(cozmo.robot.EvtRobotStateUpdated, watch)
-
-        # Just sit and let events fire for 30 seconds
-        print("Pick him up (red), find an edge (blue), set down (green)")
         time.sleep(30)
         
     finally:
