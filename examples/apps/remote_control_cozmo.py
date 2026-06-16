@@ -28,8 +28,6 @@ import sys
 sys.path.append('../lib/')
 import flask_helpers
 import cozmo
-
-
 try:
     from flask import Flask, request
 except ImportError:
